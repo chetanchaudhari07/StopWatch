@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        0
+    </h1>
+    <button id="start">start</button>
+    <button id="paus">paus</button>
+    <button id="reset">reset</button>
+</body>
+</html>
+<script>
+    let count = 0;
+    let tt = null;
+ 
+    document.getElementById("start").addEventListener("click", function(){
+
+         tt =  setInterval(function(){
+        count++;
+        document.querySelector("h1").textContent = count
+
+    },1000)
+
+    })
+
+    document.getElementById("paus").addEventListener("click", function() {
+            clearInterval(tt);
+            tt = null;
+        });
+
+    document.getElementById("reset").addEventListener("click", function(){
+            clearInterval(tt)
+            tt = null;
+            count = 0;
+            document.querySelector("h1").textContent = count;
+
+        })
+
+
+</script>
